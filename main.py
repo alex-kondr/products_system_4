@@ -9,6 +9,7 @@ from aiogram.client.default import DefaultBotProperties
 from app.log.log import get_log
 from app.routers.start import start_router
 from app.routers.products import product_router
+from app.routers.reviews import review_router
 
 # Завантажимо дані середовища з файлу .env(За замовчуванням)
 load_dotenv()
@@ -16,7 +17,7 @@ load_dotenv()
 
 # Усі обробники варто закріплювати за Router або Dispatcher
 root_router = Router()
-root_router.include_routers(start_router, product_router)
+root_router.include_routers(start_router, product_router, review_router)
 
 
 # Головна функція пакету

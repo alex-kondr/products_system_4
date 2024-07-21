@@ -11,7 +11,7 @@ def build_products_keyboard(products: list):
     return builder.as_markup()
 
 
-def build_product_actions_keyboard(index: str):
+def build_product_actions_keyboard(index: str|int):
     builder = InlineKeyboardBuilder()
     builder.button(text="Продати товар", callback_data=f"sold_product_{index}")
     builder.button(text="Видалити товар", callback_data=f"remove_product_{index}")
